@@ -37,8 +37,10 @@ class TwoLayerNet(object):
     - output_size: The number of classes C.
     """
     self.params = {}
+    np.random.seed(0) # let every initialization generate the same random num
     self.params['W1'] = std * np.random.randn(input_size, hidden_size)
     self.params['b1'] = np.zeros(hidden_size)
+    np.random.seed(1)
     self.params['W2'] = std * np.random.randn(hidden_size, output_size)
     self.params['b2'] = np.zeros(output_size)
 
